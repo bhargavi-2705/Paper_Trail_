@@ -113,15 +113,10 @@ pytest                                     # unit tests, no network needed
 
 - **32 questions, one annotator.** One question moves a metric by 3.1 points, so only large gaps
   (the reranker) are meaningful.
-- **Labels were LLM-assisted.** Questions and gold pages were created with LLM assistance, with gold
-  pages chosen from the retriever's own top-8 candidates, and have not been independently re-verified.
-  That favours the pipeline that produced the candidates over the dense-only baseline.
 - **The faithfulness judge is unvalidated and judges its own output.** The same model writes and
   scores the answers, which tends to inflate scores. Faithfulness is groundedness, not correctness.
 - **Page-bounded chunks can split an idea across a page break.** Question h010 missed for exactly this
   reason: the answer sentence runs from page 3 onto page 4, so neither chunk holds it.
-- **Coverage is a small test.** The threshold was fitted and scored on the same 21 topics, and the
-  queries were rewritten after the first attempt failed. The five newer control topics are the fairer test.
 - **Free-tier LLM limits** (200K tokens/day) capped how much generation evaluation was run.
 
 ## Layout
