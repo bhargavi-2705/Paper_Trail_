@@ -1,4 +1,9 @@
-.venv/
+index/
+index_*/
+data/raw/*.pdf
+eval/results/
+eval/questions_synthetic.jsonl
+.ablation_config.yaml
 __pycache__/
 .pytest_cache/
 .env
